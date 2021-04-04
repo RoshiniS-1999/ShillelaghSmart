@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "945422820146",
+    "project_id": "shillelagh-9df96",
+    "storage_bucket": "shillelagh-9df96.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:945422820146:android:1a6ca97b8e7809e5c86d2b",
+        "android_client_info": {
+          "package_name": "com.example.shillelagh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "945422820146-obvgutbhmof63nlbj35aub2igubaevch.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoYHBpYVK5dJySiTvVRN7TgEiM0uNtft4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "945422820146-obvgutbhmof63nlbj35aub2igubaevch.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

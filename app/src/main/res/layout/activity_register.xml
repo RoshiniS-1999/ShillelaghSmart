@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/icon" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/signup"
         android:layout_width="181dp"
         android:layout_height="50dp"
         android:background="@drawable/round_corner"
@@ -34,7 +34,7 @@
         app:layout_constraintVertical_bias="0.943" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/name"
         android:layout_width="307dp"
         android:layout_height="58dp"
         android:background="@drawable/round_corner"
@@ -54,7 +54,7 @@
         app:layout_constraintVertical_bias="0.374" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/email"
         android:layout_width="307dp"
         android:layout_height="58dp"
         android:background="@drawable/round_corner"
@@ -74,27 +74,7 @@
         app:layout_constraintVertical_bias="0.484" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
-        android:layout_width="307dp"
-        android:layout_height="58dp"
-        android:background="@drawable/round_corner"
-        android:drawableLeft="@drawable/ic_baseline_lock_24"
-        android:drawableTint="#4E4C4C"
-        android:ems="10"
-        android:hint=" Password"
-        android:inputType="textPersonName"
-        android:padding="16dp"
-        android:textColor="#100A0A"
-        android:textColorHint="#605C5C"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.586"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.597" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/contact"
         android:layout_width="307dp"
         android:layout_height="58dp"
         android:background="@drawable/round_corner"
@@ -114,7 +94,7 @@
         app:layout_constraintVertical_bias="0.71" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName7"
+        android:id="@+id/emergency_contact"
         android:layout_width="307dp"
         android:layout_height="58dp"
         android:background="@drawable/round_corner"
@@ -161,4 +141,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.1" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="308dp"
+        android:layout_height="56dp"
+        android:background="@drawable/round_corner"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:drawableTint="#474646"
+        android:ems="10"
+        android:hint=" Password"
+        android:inputType="textPassword"
+        android:paddingStart="16dp"
+        android:textColor="#120909"
+        android:textColorHint="#5C5B5B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.586"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.595" />
 </androidx.constraintlayout.widget.ConstraintLayout>
