@@ -120,6 +120,8 @@ Button signup,forgotpassoword;
                 if(task.isSuccessful()){
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     Toast.makeText(getApplicationContext(), " Successful..!", Toast.LENGTH_LONG).show();
+                    Intent i =  new Intent(getApplicationContext(),Dasboard.class);
+                    startActivity(i);
                 }
                 else{
                     Toast.makeText(getApplicationContext(),"Failed to Login! Check your credentials",Toast.LENGTH_LONG).show();
