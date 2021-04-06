@@ -2,6 +2,7 @@ package com.example.shillelagh;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
@@ -38,28 +39,10 @@ TextToSpeech textToSpeech;
                  Intent i = new Intent(getApplicationContext(),Navigation.class);
                  startActivity(i);
 
+
+
+
              }
          });
-
-
-        navibtn = findViewById(R.id.navibtn);
-        editt1 = findViewById(R.id.editt1);
-        editt2 = findViewById(R.id.editt2);
-        navibtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                String dest = editt2.getText().toString().trim();
-              Intent intent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("google.navigation:q="+dest+"&mode=w"));
-
-                intent.setPackage("com.google.android.apps.maps");
-                if(intent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(intent);
-                }
-            }
-        });
-
     }
 }

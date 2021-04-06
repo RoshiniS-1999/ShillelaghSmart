@@ -38,12 +38,11 @@ public class Navigation extends AppCompatActivity {
         setContentView(R.layout.activity_navigation);
 
 
-
         editText = (EditText) findViewById(R.id.editText);
         speak = (ImageButton) findViewById(R.id.speak);
 
-        if(ContextCompat.checkSelfPermission(this,Manifest.permission.RECORD_AUDIO)!= PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.RECORD_AUDIO},1);
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, 1);
         }
 
         final SpeechRecognizer mSpeechRecognizer = SpeechRecognizer.createSpeechRecognizer(this);
@@ -56,15 +55,14 @@ public class Navigation extends AppCompatActivity {
         speak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(count==0){
+                if (count == 0) {
                     mSpeechRecognizer.startListening(mSpeechRecognizerIntent);
                     editText.setHint("Listening..");
-                    count=1;
-                }
-                else{
+                    count = 1;
+                } else {
                     mSpeechRecognizer.stopListening();
                     editText.setHint("stopped Listening..");
-                    count=0;
+                    count = 0;
                 }
             }
         });
@@ -141,6 +139,7 @@ public class Navigation extends AppCompatActivity {
                 //displaying the first match
                 if (matches != null)
                     editText.setText(matches.get(0));
+                navicall();
             }
 
 
@@ -160,13 +159,24 @@ public class Navigation extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if(requestCode == 1){
-            if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                Toast.makeText(getApplicationContext(),"Permission Granted",Toast.LENGTH_SHORT).show();
+        if (requestCode == 1) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(getApplicationContext(), "Permission Granted", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getApplicationContext(), "Permission not Granted", Toast.LENGTH_SHORT).show();
+
             }
-            else{
-                Toast.makeText(getApplicationContext(),"Permission not Granted",Toast.LENGTH_SHORT).show();
-            }
+        }
+    }
+
+    public void navicall() {
+        String dest = editText.getText().toString().trim();
+        Intent intent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("google.navigation:q=" + dest + "&mode=w"));
+
+        intent.setPackage("com.google.android.apps.maps");
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
         }
     }
 }
