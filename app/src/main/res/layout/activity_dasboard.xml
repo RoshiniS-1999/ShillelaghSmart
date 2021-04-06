@@ -79,18 +79,4 @@
             app:layout_constraintVertical_bias="0.238" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageButton
-        android:id="@+id/navigation"
-        android:layout_width="115dp"
-        android:layout_height="153dp"
-        android:background="#FFFFFF"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19"
-        app:srcCompat="@drawable/navigationicon" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
