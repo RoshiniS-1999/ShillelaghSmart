@@ -1,31 +1,46 @@
 package com.example.shillelagh;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.speech.RecognizerIntent;
+import android.speech.tts.TextToSpeech;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.ImageButton;
 
-import java.util.ArrayList;
 import java.util.Locale;
 
 public class Dasboard extends AppCompatActivity {
-
-    private static final  int REQUEST_CODE_SPEECH_INPUT = 1000;
-    private Button navibtn;
-    private EditText editt1 , editt2;
+ImageButton navigation;
+TextToSpeech textToSpeech;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dasboard);
+
+        navigation = (ImageButton)findViewById(R.id.navigation);
+
+        textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                    if(status == TextToSpeech.SUCCESS){
+                        int Lang = textToSpeech.setLanguage(Locale.ENGLISH);
+                    }
+            }
+        });
+
+         navigation.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 String inputdest = "please give destination";
+
+                 int speech = textToSpeech.speak(inputdest,TextToSpeech.QUEUE_FLUSH,null);
+                 Intent i = new Intent(getApplicationContext(),Navigation.class);
+                 startActivity(i);
+
+             }
+         });
+
 
         navibtn = findViewById(R.id.navibtn);
         editt1 = findViewById(R.id.editt1);
@@ -47,5 +62,4 @@ public class Dasboard extends AppCompatActivity {
         });
 
     }
-
 }
