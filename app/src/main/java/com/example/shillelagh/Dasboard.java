@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -30,7 +32,34 @@ TextToSpeech textToSpeech;
             }
         });
 
-         navigation.setOnClickListener(new View.OnClickListener() {
+       /* navigation.setOnTouchListener(new View.OnTouchListener() {
+            GestureDetector gesturedetector = new GestureDetector(getApplicationContext(), new GestureDetector.SimpleOnGestureListener(){
+
+                @Override
+                public boolean onSingleTapUp(MotionEvent e) {
+                    String inputdest = " You've chosen Navigation, please double tap to confirm your selection ";
+                    int speech = textToSpeech.speak(inputdest,TextToSpeech.QUEUE_FLUSH,null);
+                    return super.onSingleTapUp(e);
+                }
+
+                @Override
+                public boolean onDoubleTap(MotionEvent e) {
+                    String inputdest = "please give destination";
+
+                    int speech = textToSpeech.speak(inputdest,TextToSpeech.QUEUE_FLUSH,null);
+                    Intent i = new Intent(getApplicationContext(),Navigation.class);
+                    startActivity(i);
+                    return super.onDoubleTap(e);
+                }
+            });
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                gesturedetector.onTouchEvent(event);
+                return false;
+            }
+        }); */
+
+       /*  navigation.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
                  String inputdest = "please give destination";
@@ -39,10 +68,7 @@ TextToSpeech textToSpeech;
                  Intent i = new Intent(getApplicationContext(),Navigation.class);
                  startActivity(i);
 
-
-
-
              }
-         });
+         });*/
     }
 }

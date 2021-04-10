@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:backgroundTint="#FFFFFF"
+    android:background="@drawable/pic1"
+    app:srcCompat="@drawable/pic1"
     tools:context=".Dasboard">
 
     <TextView
@@ -22,20 +22,8 @@
         app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.773"
+        app:layout_constraintVertical_bias="0.855"
         tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/detection"
-        android:layout_width="163dp"
-        android:layout_height="131dp"
-        android:src="@drawable/detectionicon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.653" />
 
     <TextView
         android:id="@+id/textView6"
@@ -51,46 +39,33 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.393"
+        app:layout_constraintVertical_bias="0.435"
         tools:ignore="MissingConstraints" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="417dp"
-        android:layout_height="47dp"
-        android:background="@drawable/rect_shape"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageView
-            android:id="@+id/imageView11"
-            android:layout_width="29dp"
-            android:layout_height="41dp"
-            android:background="@drawable/ic_baseline_arrow_back_ios_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.05"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.238" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageButton
         android:id="@+id/navigation"
-        android:layout_width="113dp"
-        android:layout_height="194dp"
+        android:layout_width="141dp"
+        android:layout_height="173dp"
         android:background="#FFFFFF"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.128"
+        app:layout_constraintVertical_bias="0.206"
         app:srcCompat="@drawable/navigationicon" />
+
+    <ImageButton
+        android:id="@+id/navigation2"
+        android:layout_width="159dp"
+        android:layout_height="154dp"
+        android:background="#FFFFFF"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.736"
+        app:srcCompat="@drawable/object" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

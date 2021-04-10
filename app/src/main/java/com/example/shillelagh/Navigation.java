@@ -16,6 +16,7 @@ import android.provider.Settings;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -31,6 +32,7 @@ public class Navigation extends AppCompatActivity {
     ImageButton speak;
     EditText editText;
     int count = 0;
+    TextToSpeech textToSpeech;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,20 +54,35 @@ public class Navigation extends AppCompatActivity {
         mSpeechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE,
                 Locale.getDefault());
 
-        speak.setOnClickListener(new View.OnClickListener() {
+        textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
-            public void onClick(View v) {
-                if (count == 0) {
-                    mSpeechRecognizer.startListening(mSpeechRecognizerIntent);
-                    editText.setHint("Listening..");
-                    count = 1;
-                } else {
-                    mSpeechRecognizer.stopListening();
-                    editText.setHint("stopped Listening..");
-                    count = 0;
+            public void onInit(int status) {
+                if(status == TextToSpeech.SUCCESS){
+                    int Lang = textToSpeech.setLanguage(Locale.ENGLISH);
                 }
             }
         });
+
+
+
+            speak.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    if (count == 0) {
+                        mSpeechRecognizer.startListening(mSpeechRecognizerIntent);
+                        editText.setHint("Listening..");
+                        count = 1;
+
+                    } else {
+                        mSpeechRecognizer.stopListening();
+                        editText.setHint("stopped Listening..");
+                        count = 0;
+                    }
+
+                }
+            });
+
 
         mSpeechRecognizer.setRecognitionListener(new RecognitionListener() {
             @Override
@@ -139,6 +156,11 @@ public class Navigation extends AppCompatActivity {
                 //displaying the first match
                 if (matches != null)
                     editText.setText(matches.get(0));
+
+               /* String destvar = editText.getText().toString().trim();
+                String inputdest = " You have given your destination as "+destvar;
+                int speech = textToSpeech.speak(inputdest,TextToSpeech.QUEUE_FLUSH,null);*/
+
                 navicall();
             }
 
