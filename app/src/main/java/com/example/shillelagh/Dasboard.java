@@ -32,7 +32,7 @@ TextToSpeech textToSpeech;
             }
         });
 
-       /* navigation.setOnTouchListener(new View.OnTouchListener() {
+        navigation.setOnTouchListener(new View.OnTouchListener() {
             GestureDetector gesturedetector = new GestureDetector(getApplicationContext(), new GestureDetector.SimpleOnGestureListener(){
 
                 @Override
@@ -57,9 +57,9 @@ TextToSpeech textToSpeech;
                 gesturedetector.onTouchEvent(event);
                 return false;
             }
-        }); */
+        });
 
-       /*  navigation.setOnClickListener(new View.OnClickListener() {
+       /* navigation.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
                  String inputdest = "please give destination";

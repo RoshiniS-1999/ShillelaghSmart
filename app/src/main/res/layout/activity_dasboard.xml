@@ -4,26 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pic1"
-    app:srcCompat="@drawable/pic1"
+    android:backgroundTint="#FFFFFF"
+    android:background="#FFFFFF"
     tools:context=".Dasboard">
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="209dp"
-        android:layout_height="39dp"
-        android:text="Object Detection"
-        android:textAlignment="center"
-        android:textColor="#090909"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.534"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.855"
-        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView6"
@@ -54,18 +37,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.206"
         app:srcCompat="@drawable/navigationicon" />
-
-    <ImageButton
-        android:id="@+id/navigation2"
-        android:layout_width="159dp"
-        android:layout_height="154dp"
-        android:background="#FFFFFF"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.736"
-        app:srcCompat="@drawable/object" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
