@@ -10,8 +10,9 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="194dp"
-        android:layout_height="42dp"
+        android:layout_width="308dp"
+        android:layout_height="47dp"
+        android:background="#393636"
         android:text="Navigation"
         android:textAlignment="center"
         android:textColor="#090909"
@@ -27,15 +28,15 @@
 
     <ImageButton
         android:id="@+id/navigation"
-        android:layout_width="141dp"
-        android:layout_height="173dp"
+        android:layout_width="145dp"
+        android:layout_height="190dp"
         android:background="#FFFFFF"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.206"
+        app:layout_constraintVertical_bias="0.199"
         app:srcCompat="@drawable/navigationicon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
