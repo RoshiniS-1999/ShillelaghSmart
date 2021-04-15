@@ -17,6 +17,7 @@ public class Dash extends AppCompatActivity {
     Adapter adapter;
     Integer[] colors=null;
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,14 +27,14 @@ public class Dash extends AppCompatActivity {
         models.add(new model(R.drawable.compass,"Navigation"));
         models.add(new model(R.drawable.compass,"Object Detection"));
         models.add(new model(R.drawable.compass,"Emergency"));
-        models.add(new model(R.drawable.compass,"Navigation"));
+
 
         adapter = new Adapter(models,this);
         viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(adapter);
         viewPager.setPadding(130,0,130,0);
 
-        Integer[] colors_temp = {
+        final Integer[] colors_temp = {
                 getResources().getColor(R.color.color1),
                 getResources().getColor(R.color.color1),
                 getResources().getColor(R.color.color1),
@@ -55,6 +56,7 @@ public class Dash extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
+
 
             }
 

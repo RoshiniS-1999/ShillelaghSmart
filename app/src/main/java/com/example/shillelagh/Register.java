@@ -87,7 +87,7 @@ FirebaseAuth fAuth;
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
                                         Toast.makeText(getApplicationContext(), "Registered Successfully..!", Toast.LENGTH_LONG).show();
-                                        Intent i =  new Intent(getApplicationContext(),Dasboard.class);
+                                        Intent i =  new Intent(getApplicationContext(),Dash.class);
                                         startActivity(i);
 
                                     } else {
