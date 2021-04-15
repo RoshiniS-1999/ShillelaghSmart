@@ -134,12 +134,7 @@ public class Adapter extends PagerAdapter {
        }
 
        if(position == 2){
-           view.setOnClickListener(new View.OnClickListener() {
-               @Override
-               public void onClick(View v) {
 
-               }
-           });
            view.setOnTouchListener(new View.OnTouchListener() {
 
 
