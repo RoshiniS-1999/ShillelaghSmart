@@ -70,11 +70,13 @@ public class Navigation extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (count == 0) {
+                        speak.setImageDrawable(getDrawable(R.drawable.ic_baseline_mic_24));
                         mSpeechRecognizer.startListening(mSpeechRecognizerIntent);
                         editText.setHint("Listening..");
                         count = 1;
 
                     } else {
+                        speak.setImageDrawable(getDrawable(R.drawable.ic_baseline_mic_off_24));
                         mSpeechRecognizer.stopListening();
                         editText.setHint("stopped Listening..");
                         count = 0;
@@ -157,9 +159,7 @@ public class Navigation extends AppCompatActivity {
                 if (matches != null)
                     editText.setText(matches.get(0));
 
-               /* String destvar = editText.getText().toString().trim();
-                String inputdest = " You have given your destination as "+destvar;
-                int speech = textToSpeech.speak(inputdest,TextToSpeech.QUEUE_FLUSH,null);*/
+
 
                 navicall();
             }
