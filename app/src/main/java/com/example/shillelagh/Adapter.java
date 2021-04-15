@@ -95,6 +95,12 @@ public class Adapter extends PagerAdapter {
         userId = user.getUid();
        if(position==0){
 
+           view.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+
+               }
+           });
            view.setOnTouchListener(new View.OnTouchListener() {
 
 
@@ -133,8 +139,12 @@ public class Adapter extends PagerAdapter {
 
        }
 
-       if(position == 2){
+       if(position == 2){view.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
 
+           }
+       });
            view.setOnTouchListener(new View.OnTouchListener() {
 
 
@@ -149,22 +159,10 @@ public class Adapter extends PagerAdapter {
 
                    @Override
                    public boolean onDoubleTap(MotionEvent e) {
-                       reference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
-                           @Override
-                           public void onDataChange(@NonNull DataSnapshot snapshot) {
-                               User userProfile = snapshot.getValue(User.class);
-                               if(userProfile!= null){
-                                    phone = userProfile.emerg_contact;
-                                    callnumber();
-                               }
-                           }
-                           @Override
-                           public void onCancelled(@NonNull DatabaseError error) {
-                               Toast.makeText(view.getContext(),"Something wrong happened",Toast.LENGTH_LONG).show();
-                           }
-                       });
+                       String inputdest = "Calling your emergency contact!!!";
 
-
+                       int speech = textToSpeech.speak(inputdest,TextToSpeech.QUEUE_FLUSH,null);
+                       reference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() { @Override public void onDataChange(@NonNull DataSnapshot snapshot) { User userProfile = snapshot.getValue(User.class); if(userProfile!= null){ phone = userProfile.emerg_contact; callnumber(); } } @Override public void onCancelled(@NonNull DatabaseError error) { Toast.makeText(view.getContext(),"Something wrong happened",Toast.LENGTH_LONG).show(); } });
                        return super.onDoubleTap(e);
                    }
                });
