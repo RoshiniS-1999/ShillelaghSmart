@@ -24,9 +24,9 @@ public class Dash extends AppCompatActivity {
         setContentView(R.layout.activity_dash);
 
         models = new ArrayList<>();
-        models.add(new model(R.drawable.compass,"Navigation"));
-        models.add(new model(R.drawable.compass,"Object Detection"));
-        models.add(new model(R.drawable.compass,"Emergency"));
+        models.add(new model(R.drawable.navigation_dash,"Navigation"));
+        models.add(new model(R.drawable.object_det_dash,"Object Detection"));
+        models.add(new model(R.drawable.emergency_dash,"Emergency"));
 
 
         adapter = new Adapter(models,this);
